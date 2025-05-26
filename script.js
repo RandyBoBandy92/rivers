@@ -7,6 +7,17 @@ document.addEventListener("DOMContentLoaded", () => {
       navLinks.classList.toggle("active");
       hamburgerButton.classList.toggle("active");
     });
+
+    // Add event listener to close menu when a link is clicked
+    const links = navLinks.querySelectorAll("a");
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          hamburgerButton.classList.remove("active");
+        }
+      });
+    });
   }
 
   // Dynamic restaurant hours status
