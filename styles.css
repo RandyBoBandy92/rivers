@@ -1,0 +1,274 @@
+:root {
+  --primary-color: #2a2d3a; /* Darker blue/grey accent (was dark green for header) */
+  --secondary-color: #3b3e4f; /* Main building blue/purple (was dark page background) */
+  --accent-color: #e1d7c0; /* Cream trim (was white for text/borders) */
+  --text-color-light: #e1d7c0; /* Cream trim - for most text */
+  --text-color-medium: #c0b5a0; /* Muted cream for less emphasis */
+  --text-color-darker: #a09580; /* Further muted cream */
+  --text-color-hover: #f0eada; /* Brighter Cream for hover */
+  --shadow-color: rgba(0, 0, 0, 0.6); /* Slightly adjusted shadow */
+  --button-hover-bg: rgba(
+    225,
+    215,
+    192,
+    0.15
+  ); /* Based on new accent for button hover */
+  --nav-hover-underline-offset: 4px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: var(--secondary-color); /* Dark background as per image */
+  color: var(--text-color-light); /* Default text color */
+}
+
+header {
+  background-color: var(--primary-color); /* Dark green from the image */
+  padding: 1em 2em;
+}
+
+/* Logo Styles */
+.logo img {
+  width: 100px;
+  height: auto;
+  margin-bottom: -28px;
+  margin-top: -17px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* For positioning the mobile menu */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 2em;
+}
+
+nav ul li a,
+.order-online {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav ul li a:hover,
+.order-online:hover {
+  color: var(--text-color-hover);
+  text-decoration: underline;
+  text-underline-offset: var(--nav-hover-underline-offset);
+}
+
+.logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--text-color-light);
+}
+
+.order-online {
+  /* Ensure it's visible on mobile when nav links are stacked */
+  align-self: center;
+}
+
+.order-online-desktop {
+  /* Styles for desktop if any specific needed, otherwise inherits .order-online */
+}
+
+.order-online-mobile {
+  display: none; /* Hidden by default, shown in mobile menu */
+}
+
+.hamburger {
+  display: none; /* Hidden by default */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color-light);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+.hero {
+  background-image: url("assets/images/rivers_hero.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 10em 2em; /* Adjusted padding for better visibility */
+  min-height: 80vh; /* Ensure hero takes up most of the viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: 4em; /* Large font for restaurant name */
+  margin-bottom: 0.2em;
+  color: var(--text-color-light);
+  text-shadow: 2px 2px 4px var(--shadow-color);
+}
+
+.hero-content .location {
+  font-size: 1.5em;
+  margin-bottom: 1.5em;
+  color: var(--text-color-medium);
+  text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+.hero-content .tagline {
+  font-size: 1.8em;
+  margin-bottom: 2em;
+  color: var(--text-color-darker);
+  text-shadow: 1px 1px 2px var(--shadow-color);
+}
+
+.btn {
+  padding: 0.8em 2em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.btn-menu {
+  background-color: transparent; /* Transparent background for button */
+  color: var(--text-color-light);
+  border: 2px solid var(--accent-color); /* White border */
+  font-size: 1.2em;
+}
+
+.btn-menu:hover {
+  background-color: var(--button-hover-bg);
+}
+
+/* Add a bit of responsiveness */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3em;
+  }
+  .hero-content .location {
+    font-size: 1.2em;
+  }
+  .hero-content .tagline {
+    font-size: 1.5em;
+  }
+  nav ul {
+    display: none; /* Hide nav links by default on mobile */
+    flex-direction: column;
+    align-items: center; /* Center links when open */
+    width: 100%;
+    background-color: var(--primary-color); /* Same as header */
+    position: absolute;
+    top: 100%; /* Position below the header */
+    left: 0;
+    padding: 1em 0; /* Add some padding */
+    z-index: 10; /* Ensure it's above other content */
+  }
+  nav ul.active {
+    display: flex; /* Show when active */
+  }
+  nav ul.active .order-online-mobile {
+    display: block; /* Show in active mobile menu */
+    padding: 0.5em 0; /* Add some padding to match other li items */
+    /* Resetting potential specific desktop styles if any */
+    color: var(--text-color-light);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  nav ul.active .order-online-mobile:hover {
+    color: var(--text-color-hover);
+    text-decoration: underline;
+    text-underline-offset: var(--nav-hover-underline-offset);
+  }
+  nav ul li {
+    margin-right: 0;
+    margin-bottom: 1em; /* Space out links */
+  }
+  nav {
+    flex-direction: row; /* Keep logo/button and order online on one line if possible */
+    justify-content: space-between; /* Space out logo and hamburger */
+    align-items: center;
+  }
+  .order-online {
+    margin-top: 0; /* Reset margin for mobile layout */
+    /* Potentially hide or move if it clutters with hamburger */
+    /* For now, let's try to keep it. May need adjustment. */
+  }
+  .order-online-desktop {
+    display: none; /* Hide the desktop version on mobile */
+  }
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+  /* Hamburger animation to X */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+/* Add styles for the About Section */
+.about {
+  padding: 4em 2em;
+  background-color: var(
+    --secondary-color
+  ); /* Or a slightly lighter/darker shade if preferred */
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  align-items: center;
+  gap: 2em; /* Space between image and text */
+  max-width: 1200px; /* Max width for content */
+  margin: 0 auto; /* Center the content */
+}
+
+.about-content img {
+  max-width: 100%; /* Responsive image */
+  height: auto;
+  border-radius: 8px; /* Slightly rounded corners for the image */
+  flex: 1; /* Allow image to take up space */
+  min-width: 300px; /* Minimum width before stacking */
+  box-shadow: 0 4px 8px var(--shadow-color);
+}
+
+.about-text {
+  flex: 2; /* Allow text to take more space */
+  min-width: 300px; /* Minimum width before stacking */
+}
+
+.about-text h2 {
+  font-size: 2.5em;
+  color: var(--text-color-light);
+  margin-bottom: 0.5em;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--text-color-medium);
+}
