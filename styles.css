@@ -612,3 +612,47 @@ nav ul li a:hover,
     font-size: 2em;
   }
 }
+
+/* Hours and Contact side-by-side for larger screens */
+@media (min-width: 992px) {
+  /* Adjust breakpoint as needed */
+  .hours-contact-container {
+    display: flex;
+    justify-content: space-between; /* Or space-around, align-items: flex-start; */
+    gap: 2em; /* Adjust gap between sections */
+    padding: 0 2em; /* Add horizontal padding to the container if sections don't have it */
+  }
+
+  .hours-contact-container .hours-section,
+  .hours-contact-container .contact-section {
+    flex: 1 1 calc(50% - 1em); /* Each takes half the space minus half the gap */
+    /* Remove individual section top/bottom padding if container handles it or adjust */
+    padding-top: 4em; /* Or keep existing padding-top/bottom if preferred */
+    padding-bottom: 4em;
+    /* Ensure text alignment is appropriate if it was centered before */
+    text-align: left; /* Or center if that's the design for the content within */
+  }
+
+  .hours-contact-container .hours-section .hours-content,
+  .hours-contact-container .contact-section .contact-content {
+    margin: 0 auto; /* Keep content centered within its section if section is text-align: left */
+    /* If sections become text-align left, but content needs to be centered: */
+    max-width: 100%; /* Allow content to fill the section width */
+  }
+
+  .hours-contact-container .hours-section .hours-content h2,
+  .hours-contact-container .contact-section .contact-content h2 {
+    text-align: center; /* Center headers if main text is left aligned */
+  }
+
+  /* If hours list was text-align: left and section becomes text-align: left, this is fine */
+  /* If contact details were text-align: center and section becomes text-align: left: */
+  .hours-contact-container .contact-section .contact-details {
+    text-align: center; /* Re-center contact details if needed */
+  }
+  .hours-contact-container .contact-section .map-container {
+    margin-left: auto; /* Center map if section is text-align left */
+    margin-right: auto;
+    max-width: 500px; /* Example max-width for map in side-by-side */
+  }
+}

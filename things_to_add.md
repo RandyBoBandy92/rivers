@@ -2,8 +2,10 @@ Okay, I can help with that! Restaurant websites often include a variety of secti
 
 Menu: This is arguably the most important section. It should be easy to read, up-to-date, and ideally include prices. Some restaurants categorize their menu (e.g., Appetizers, Main Courses, Desserts, Drinks). PDF menus can be frustrating on mobile, so an HTML version is usually better.
 
+DONE
 Gallery: A collection of high-quality photos of the food, the restaurant's interior, and perhaps even happy customers or special events. This helps to visually entice visitors.
 
+DONE
 Contact Us: Essential information like address (with a map, if possible), phone number, email address, and social media links. A contact form can also be useful.
 
 Reservations: Information on how to make a reservation, whether it's through a phone call, an email, or an online booking system integration.
@@ -18,6 +20,7 @@ Blog/News: Less common for all restaurants, but some use a blog to share news, r
 
 Catering/Private Events: If the restaurant offers catering services or can host private parties, a dedicated section with details and inquiry forms would be beneficial.
 
+DONE
 Location/Directions: While this can be part of "Contact Us," a separate section with a clear map, parking information, and public transport details can be very helpful, especially for new customers.
 
 Gift Cards: Information on purchasing gift cards, if offered.
