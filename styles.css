@@ -192,6 +192,7 @@ nav ul li a:hover,
   nav ul.active {
     display: flex; /* Show when active */
     transform: translateX(0); /* Slide in to be on-screen */
+    gap: 20px;
   }
   nav ul.active .order-online-mobile {
     display: block; /* Show in active mobile menu */
@@ -201,15 +202,36 @@ nav ul li a:hover,
     text-decoration: none;
     transition: color 0.3s ease;
     margin-bottom: 0;
+    width: 100%; /* Ensure full width */
+    text-align: center; /* Center text */
   }
   nav ul.active .order-online-mobile:hover {
     color: var(--text-color-hover);
     text-decoration: underline;
     text-underline-offset: var(--nav-hover-underline-offset);
+    background-color: var(
+      --button-hover-bg
+    ); /* Optional: add hover background */
   }
   nav ul li {
-    margin-right: 0;
-    margin-bottom: 1em; /* Space out links */
+    margin-right: 0; /* Remove right margin for full-width items */
+    width: 100%; /* Make list item full width */
+    border: 1px solid rgba(var(--accent-color-rgb, 225, 215, 192), 0.1); /* Subtle separator */
+  }
+  nav ul li:last-child {
+    border-bottom: 1px solid rgba(var(--accent-color-rgb, 225, 215, 192), 0.1);
+  }
+  nav ul li a {
+    /* Apply to all links in mobile nav */
+    display: block; /* Make link take full width of li */
+    width: 100%;
+    padding: 1em 0; /* Add padding for button-like feel */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+  }
+  nav ul li a:hover {
+    /* Hover for all links */
+    background-color: var(--button-hover-bg); /* Consistent hover */
   }
   nav {
     flex-direction: row; /* Keep logo/button and order online on one line if possible */
