@@ -621,6 +621,8 @@ nav ul li a:hover,
     justify-content: space-between; /* Or space-around, align-items: flex-start; */
     gap: 2em; /* Adjust gap between sections */
     padding: 0 2em; /* Add horizontal padding to the container if sections don't have it */
+    max-width: 1300px;
+    margin: 0 auto;
   }
 
   .hours-contact-container .hours-section,
