@@ -410,21 +410,21 @@ nav ul li a:hover,
 
 .marquee-track {
   display: flex; /* Lay out items in a row */
-  /* Total width will be (number of original items * item width) * 2 */
-  /* Example: 4 items * 300px/item * 2 = 2400px */
+  /* Total width will be (number of original items * item width) * 3 for three sets */
+  /* Example: 4 items * 300px/item * 3 = 3600px */
   width: calc(
-    300px * 8
-  ); /* Assuming 300px item width and 4 original items (8 total) */
-  animation: marquee-scroll 30s linear infinite;
+    300px * 12
+  ); /* Assuming 300px item width and 4 original items (12 total for 3 sets) */
+  animation: marquee-scroll 20s linear infinite;
   /* Pause animation on hover */
   /* &:hover { animation-play-state: paused; } */ /* See note below */
+  gap: 20px; /* Space between items */
 }
 
 .marquee-item {
   flex-shrink: 0; /* Prevent items from shrinking */
   width: 300px; /* Must match the width used in marquee-track calculation */
   height: 220px; /* Or your desired height */
-  margin-right: 20px; /* Space between items */
   box-sizing: border-box;
   border-radius: 8px;
   overflow: hidden;
@@ -505,8 +505,8 @@ nav ul li a:hover,
     margin-right: 15px;
   }
   .marquee-track {
-    /* 4 items * 250px/item * 2 = 2000px */
-    width: calc(250px * 8);
+    /* 4 items * 250px/item * 3 sets = 3000px */
+    width: calc(250px * 12);
     animation-duration: 25s; /* Adjust speed if desired */
   }
   @keyframes marquee-scroll {
@@ -530,8 +530,8 @@ nav ul li a:hover,
     margin-right: 10px;
   }
   .marquee-track {
-    /* 4 items * 200px/item * 2 = 1600px */
-    width: calc(200px * 8);
+    /* 4 items * 200px/item * 3 sets = 2400px */
+    width: calc(200px * 12);
     animation-duration: 20s; /* Adjust speed if desired */
   }
   @keyframes marquee-scroll {
