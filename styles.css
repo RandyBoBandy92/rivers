@@ -116,7 +116,7 @@ nav ul li a:hover,
   background-position: center;
   text-align: center;
   padding: 10em 2em; /* Adjusted padding for better visibility */
-  min-height: 51vh; /* Ensure hero takes up most of the viewport height */
+  min-height: 61vh; /* Ensure hero takes up most of the viewport height */
   display: flex;
   flex-direction: column;
   justify-content: center;
