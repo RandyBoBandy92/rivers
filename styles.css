@@ -281,3 +281,96 @@ nav ul li a:hover,
   line-height: 1.6;
   color: var(--text-color-medium);
 }
+
+/* Hours Section Styles */
+.hours-section {
+  padding: 4em 2em;
+  background-color: var(
+    --secondary-color
+  ); /* Consistent with about section, or choose a slightly different shade */
+  text-align: center; /* Center the content of this section */
+}
+
+.hours-content {
+  max-width: 600px; /* Optimal width for an hours list */
+  margin: 0 auto; /* Center the content block */
+}
+
+.hours-content h2 {
+  font-size: 2.5em;
+  color: var(--text-color-light);
+  margin-bottom: 1em;
+}
+
+.hours-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+  color: var(
+    --text-color-medium
+  ); /* Or a specific status color, e.g., red for closed */
+}
+
+.hours-status .clock-icon {
+  margin-right: 0.5em;
+  fill: var(--accent-color); /* Use accent color for the icon */
+}
+
+/* Example: if status is closed, make text red */
+.hours-status .status-closed {
+  color: #ff6b6b; /* A soft red color */
+}
+
+.hours-status .status-open {
+  color: #6bff6b; /* A soft green color */
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Align list items to the left within the centered block */
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8em 0;
+  border-bottom: 1px solid rgba(var(--accent-color-rgb, 225, 215, 192), 0.2); /* Use accent color with alpha for border */
+  font-size: 1.1em;
+  color: var(--text-color-medium);
+}
+
+.hours-list li:last-child {
+  border-bottom: none;
+}
+
+.hours-list .day {
+  font-weight: bold;
+  color: var(--text-color-light);
+}
+
+.hours-list .time {
+  color: var(--text-color-medium);
+}
+
+/* Responsive adjustments if needed, but flex should handle most */
+@media (max-width: 480px) {
+  .hours-content h2 {
+    font-size: 2em;
+  }
+  .hours-list li {
+    font-size: 1em;
+    flex-direction: column; /* Stack day and time on very small screens */
+    align-items: flex-start;
+    gap: 0.25em;
+  }
+  .hours-list .time {
+    padding-left: 0; /* Remove padding if day/time stacked */
+  }
+  .hours-section {
+    padding: 3em 1em;
+  }
+}

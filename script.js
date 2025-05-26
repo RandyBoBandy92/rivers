@@ -8,4 +8,48 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburgerButton.classList.toggle("active");
     });
   }
+
+  // Dynamic restaurant hours status
+  const statusMessageElement = document.getElementById(
+    "current-status-message"
+  );
+  if (statusMessageElement) {
+    const hours = {
+      // 0: Sunday, 1: Monday, ..., 6: Saturday
+      0: { open: 9, close: 20 }, // Sunday 9 AM - 8 PM
+      1: null, // Monday Closed
+      2: { open: 9, close: 20 }, // Tuesday 9 AM - 8 PM
+      3: { open: 9, close: 20 }, // Wednesday 9 AM - 8 PM
+      4: { open: 9, close: 20 }, // Thursday 9 AM - 8 PM
+      5: { open: 9, close: 20 }, // Friday 9 AM - 8 PM
+      6: { open: 9, close: 20 }, // Saturday 9 AM - 8 PM
+    };
+
+    const now = new Date();
+    const currentDay = now.getDay(); // 0 for Sunday, 1 for Monday, etc.
+    const currentHour = now.getHours(); // 0-23
+    // const currentMinute = now.getMinutes(); // 0-59 (if needed for more precision)
+
+    const todaysHours = hours[currentDay];
+    let isOpen = false;
+
+    if (todaysHours) {
+      // Check if current time is within opening hours
+      // Assuming close time means "up to the start of this hour"
+      // e.g. if close is 20, it means open until 7:59 PM
+      if (currentHour >= todaysHours.open && currentHour < todaysHours.close) {
+        isOpen = true;
+      }
+    }
+
+    if (isOpen) {
+      statusMessageElement.textContent = "Open now";
+      statusMessageElement.classList.remove("status-closed");
+      statusMessageElement.classList.add("status-open");
+    } else {
+      statusMessageElement.textContent = "Closed today";
+      statusMessageElement.classList.remove("status-open");
+      statusMessageElement.classList.add("status-closed");
+    }
+  }
 });
