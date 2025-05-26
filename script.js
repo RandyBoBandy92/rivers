@@ -93,4 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Swiper.js initialization removed for pure CSS marquee
+
+  // Dynamically set copyright year
+  const copyrightYearElement = document.getElementById("copyright-year");
+  if (copyrightYearElement) {
+    copyrightYearElement.textContent = new Date().getFullYear();
+  }
 });

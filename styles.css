@@ -796,3 +796,35 @@ nav ul li a:hover,
     margin-bottom: 0.5em; /* Space before description */
   }
 }
+
+/* Footer Styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem; /* Add some space above the footer */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+#copyright-year {
+  /* Styles for the copyright year span, if any specific are needed */
+}
+
+footer p a {
+  color: #fff; /* Make the link white */
+  font-weight: bold; /* Make it bolder to stand out */
+  text-decoration: underline; /* Underline by default for clickability */
+  transition: color 0.3s ease;
+}
+
+footer p a:hover {
+  color: var(--accent-color); /* Change to accent color on hover */
+  text-decoration: underline; /* Keep underline on hover, or choose another style like 'none' */
+}
+
+/* Responsive adjustments may be added here if needed */
