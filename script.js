@@ -52,4 +52,32 @@ document.addEventListener("DOMContentLoaded", () => {
       statusMessageElement.classList.add("status-closed");
     }
   }
+
+  // Intersection Observer for scroll animations
+  const animatedSections = document.querySelectorAll(".fade-slide-in");
+
+  if (animatedSections.length > 0) {
+    const observerOptions = {
+      root: null, // observes intersections relative to the viewport
+      rootMargin: "0px",
+      threshold: 0.1, // Trigger when 10% of the element is visible
+    };
+
+    const observerCallback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target); // Optional: stop observing after animation
+        }
+      });
+    };
+
+    const intersectionObserver = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
+    animatedSections.forEach((section) => {
+      intersectionObserver.observe(section);
+    });
+  }
 });

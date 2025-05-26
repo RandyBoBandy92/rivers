@@ -374,3 +374,15 @@ nav ul li a:hover,
     padding: 3em 1em;
   }
 }
+
+/* Styles for scroll animations */
+.fade-slide-in {
+  opacity: 0;
+  transform: translateY(30px); /* Start slightly lower */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
