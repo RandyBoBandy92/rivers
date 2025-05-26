@@ -1,5 +1,6 @@
 Okay, I can help with that! Restaurant websites often include a variety of sections to inform and engage potential customers. Besides the "About Us" and "Hours" sections you already seem to be working on, here are some other common and useful sections:
 
+DONE
 Menu: This is arguably the most important section. It should be easy to read, up-to-date, and ideally include prices. Some restaurants categorize their menu (e.g., Appetizers, Main Courses, Desserts, Drinks). PDF menus can be frustrating on mobile, so an HTML version is usually better.
 
 DONE

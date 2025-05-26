@@ -656,3 +656,141 @@ nav ul li a:hover,
     max-width: 500px; /* Example max-width for map in side-by-side */
   }
 }
+
+/* Menu Page Specific Styles */
+.menu-page {
+  padding: 2em; /* Add overall padding to the menu page */
+}
+
+.menu-section h1 {
+  font-size: 2.8em;
+  color: var(--text-color-light);
+  text-align: center;
+  margin-bottom: 1.5em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-category {
+  margin-bottom: 3em;
+}
+
+.menu-category h2 {
+  font-size: 2em;
+  color: var(--accent-color);
+  margin-bottom: 1em;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+}
+
+.menu-category .category-description {
+  font-size: 1em;
+  color: var(--text-color-medium);
+  margin-bottom: 1.5em;
+  font-style: italic;
+}
+
+.menu-item {
+  display: flex;
+  flex-wrap: wrap; /* Allow price to wrap if needed on small screens */
+  justify-content: space-between;
+  margin-bottom: 1.2em;
+  padding-bottom: 1.2em;
+  border-bottom: 1px dashed var(--primary-color);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.menu-item .item-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--text-color-light);
+  flex-basis: 70%; /* Give more space to name */
+}
+
+.menu-item .item-price {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: var(--text-color-light);
+  flex-basis: 25%; /* Space for price */
+  text-align: right;
+}
+
+.menu-item .item-description {
+  font-size: 0.95em;
+  color: var(--text-color-medium);
+  line-height: 1.5;
+  flex-basis: 100%; /* Description takes full width below name/price */
+  margin-top: 0.5em;
+}
+
+.menu-note {
+  font-size: 0.9em;
+  color: var(--text-color-darker);
+  text-align: center;
+  margin-top: 2em;
+  font-style: italic;
+}
+
+/* Two-column layout for specific menu sections */
+.menu-columns {
+  display: flex;
+  flex-wrap: wrap; /* Wrap columns on smaller screens */
+  gap: 2em; /* Space between columns */
+}
+
+.menu-column {
+  flex: 1;
+  min-width: 300px; /* Minimum width before stacking */
+}
+
+/* Responsive adjustments for menu */
+@media (max-width: 768px) {
+  .menu-section h1 {
+    font-size: 2.2em;
+  }
+  .menu-category h2 {
+    font-size: 1.7em;
+  }
+  .menu-item .item-name {
+    font-size: 1.1em;
+  }
+  .menu-item .item-price {
+    font-size: 1em;
+  }
+  .menu-columns {
+    flex-direction: column;
+    gap: 0; /* Remove gap when stacked if desired */
+  }
+  .menu-column {
+    min-width: 100%; /* Full width when stacked */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-page {
+    padding: 1em;
+  }
+  .menu-section h1 {
+    font-size: 1.8em;
+  }
+  .menu-category h2 {
+    font-size: 1.5em;
+  }
+  .menu-item {
+    /* Consider stacking name and price if too tight */
+  }
+  .menu-item .item-name,
+  .menu-item .item-price {
+    flex-basis: 100%;
+    text-align: left;
+    margin-bottom: 0.25em; /* Space between name and price when stacked */
+  }
+  .menu-item .item-price {
+    margin-bottom: 0.5em; /* Space before description */
+  }
+}
