@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const observerOptions = {
       root: null, // observes intersections relative to the viewport
       rootMargin: "0px",
-      threshold: 0.1, // Trigger when 10% of the element is visible
+      threshold: 0.6, // Trigger when 10% of the element is visible
     };
 
     const observerCallback = (entries, observer) => {
