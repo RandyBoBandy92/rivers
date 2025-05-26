@@ -80,4 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
       intersectionObserver.observe(section);
     });
   }
+
+  // Swiper.js initialization removed for pure CSS marquee
 });

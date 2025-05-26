@@ -386,3 +386,161 @@ nav ul li a:hover,
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Gallery Section & CSS Marquee Styles */
+.gallery-section {
+  padding: 4em 0; /* Adjust padding, especially top/bottom */
+  background-color: var(--secondary-color);
+  text-align: center;
+  overflow: hidden; /* Crucial for marquee to hide non-visible parts */
+}
+
+.gallery-section h2 {
+  font-size: 2.5em;
+  color: var(--text-color-light);
+  margin-bottom: 1.5em;
+}
+
+.marquee-container {
+  width: 100%; /* Take full width of the gallery section */
+  overflow: hidden; /* Hides the parts of the track that are outside */
+  position: relative; /* For potential overlays like gradients */
+  display: flex; /* Helps if you want to center the track or add other items */
+}
+
+.marquee-track {
+  display: flex; /* Lay out items in a row */
+  /* Total width will be (number of original items * item width) * 2 */
+  /* Example: 4 items * 300px/item * 2 = 2400px */
+  width: calc(
+    300px * 8
+  ); /* Assuming 300px item width and 4 original items (8 total) */
+  animation: marquee-scroll 30s linear infinite;
+  /* Pause animation on hover */
+  /* &:hover { animation-play-state: paused; } */ /* See note below */
+}
+
+.marquee-item {
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 300px; /* Must match the width used in marquee-track calculation */
+  height: 220px; /* Or your desired height */
+  margin-right: 20px; /* Space between items */
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(
+    --primary-color
+  ); /* Placeholder if images are slow to load */
+}
+
+.marquee-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Translate by negative width of one full set of original items */
+    /* Example: 4 items * (300px item width + 20px margin-right) = -1280px */
+    /* The last item's margin is not part of the scroll distance here if track width is exact */
+    transform: translateX(
+      calc(-300px * 4 - 20px * 3)
+    ); /* (item width * num original items) + (margin * (num original items -1)) */
+    /* A slightly simpler calculation if all items have margin-right: */
+    /* transform: translateX(calc(-(300px + 20px) * 4)); */
+  }
+}
+
+/* Optional: Add pseudo-elements for a fade-out effect at the edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Width of the fade */
+  z-index: 2;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--secondary-color) 0%,
+    transparent 100%
+  );
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--secondary-color) 0%,
+    transparent 100%
+  );
+}
+
+/* Remove or comment out old Swiper/carousel styles */
+/*
+.swiper-container, .carousel-container { ... }
+.swiper-slide, .carousel-slide { ... }
+.swiper-button-next, .swiper-button-prev, .prev, .next { ... }
+.swiper-pagination-bullet, .dot { ... }
+.carousel-caption { ... }
+*/
+
+/* Responsive adjustments for marquee */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 3em 0;
+  }
+  .marquee-item {
+    width: 250px;
+    height: 180px;
+    margin-right: 15px;
+  }
+  .marquee-track {
+    /* 4 items * 250px/item * 2 = 2000px */
+    width: calc(250px * 8);
+    animation-duration: 25s; /* Adjust speed if desired */
+  }
+  @keyframes marquee-scroll {
+    100% {
+      transform: translateX(calc(-250px * 4 - 15px * 3));
+    }
+  }
+  .marquee-container::before,
+  .marquee-container::after {
+    width: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-section h2 {
+    font-size: 2em;
+  }
+  .marquee-item {
+    width: 200px;
+    height: 150px;
+    margin-right: 10px;
+  }
+  .marquee-track {
+    /* 4 items * 200px/item * 2 = 1600px */
+    width: calc(200px * 8);
+    animation-duration: 20s; /* Adjust speed if desired */
+  }
+  @keyframes marquee-scroll {
+    100% {
+      transform: translateX(calc(-200px * 4 - 10px * 3));
+    }
+  }
+  .marquee-container::before,
+  .marquee-container::after {
+    width: 50px;
+  }
+}
