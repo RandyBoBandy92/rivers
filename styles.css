@@ -195,12 +195,12 @@ nav ul li a:hover,
   }
   nav ul.active .order-online-mobile {
     display: block; /* Show in active mobile menu */
-    padding: 0.5em 0; /* Add some padding to match other li items */
     /* Resetting potential specific desktop styles if any */
     color: var(--text-color-light);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s ease;
+    margin-bottom: 0;
   }
   nav ul.active .order-online-mobile:hover {
     color: var(--text-color-hover);
