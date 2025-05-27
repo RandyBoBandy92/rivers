@@ -855,3 +855,82 @@ footer p a:hover {
 }
 
 /* Responsive adjustments may be added here if needed */
+
+/* Swiper styles for reviews carousel */
+.reviews-carousel {
+  width: 100%;
+  max-width: 600px;
+  margin: 2em auto 3em auto;
+  background: var(--secondary-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 2em 1.5em 2.5em 1.5em;
+  position: relative;
+}
+.reviews-carousel .swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2em;
+  color: var(--text-color-light);
+  min-height: 120px;
+  justify-content: center;
+  text-align: center;
+}
+.reviews-carousel .swiper-slide p {
+  font-style: italic;
+  margin-bottom: 0.5em;
+}
+.reviews-carousel .swiper-slide span {
+  color: var(--text-color-medium);
+  font-size: 1em;
+}
+.reviews-carousel .swiper-pagination {
+  bottom: 10px !important;
+}
+.reviews-carousel .swiper-pagination-bullet {
+  background: var(--accent-color);
+  opacity: 0.7;
+}
+.reviews-carousel .swiper-pagination-bullet-active {
+  background: var(--text-color-hover);
+  opacity: 1;
+}
+.reviews-carousel .swiper-button-next,
+.reviews-carousel .swiper-button-prev {
+  color: var(--accent-color);
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  margin-top: -18px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  display: none;
+}
+
+.reviews-carousel .swiper-button-next:after,
+.reviews-carousel .swiper-button-prev:after {
+  font-size: 1.5em;
+}
+@media (max-width: 600px) {
+  .reviews-carousel {
+    padding: 1.2em 0.5em 2em 0.5em;
+    max-width: 98vw;
+  }
+  .reviews-carousel .swiper-slide {
+    font-size: 1em;
+  }
+}
+
+.reviews {
+  padding: 2rem;
+  background: var(--primary-color);
+  color: var(--text-color-light);
+}
+
+.reviews h2 {
+  font-size: 2.5em;
+  text-align: center;
+  color: var(--text-color-light);
+}
