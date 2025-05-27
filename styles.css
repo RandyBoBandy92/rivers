@@ -934,3 +934,7 @@ footer p a:hover {
   text-align: center;
   color: var(--text-color-light);
 }
+
+html {
+  scroll-behavior: smooth;
+}
