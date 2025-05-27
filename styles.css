@@ -1,18 +1,13 @@
 :root {
-  --primary-color: #2a2d3a; /* Darker blue/grey accent (was dark green for header) */
-  --secondary-color: #3b3e4f; /* Main building blue/purple (was dark page background) */
-  --accent-color: #e1d7c0; /* Cream trim (was white for text/borders) */
-  --text-color-light: #e1d7c0; /* Cream trim - for most text */
-  --text-color-medium: #c0b5a0; /* Muted cream for less emphasis */
-  --text-color-darker: #a09580; /* Further muted cream */
-  --text-color-hover: #f0eada; /* Brighter Cream for hover */
-  --shadow-color: rgba(0, 0, 0, 0.6); /* Slightly adjusted shadow */
-  --button-hover-bg: rgba(
-    225,
-    215,
-    192,
-    0.15
-  ); /* Based on new accent for button hover */
+  --primary-color: #1f2437; /* near-black navy for header/nav */
+  --secondary-color: #2b3147; /* slate-blue page background */
+  --accent-color: #ffa845; /* high-chroma amber for calls-to-action */
+  --text-color-light: #ffffff; /* pure white for max contrast */
+  --text-color-medium: #e4e1da; /* warm grey for secondary copy */
+  --text-color-darker: #b8b4aa; /* muted grey for tertiary copy */
+  --text-color-hover: #ffd6a0; /* lighter amber on hover */
+  --shadow-color: rgba(0, 0, 0, 0.7);
+  --button-hover-bg: rgba(255, 168, 69, 0.12);
   --nav-hover-underline-offset: 4px;
 }
 
@@ -161,6 +156,21 @@ nav ul li a:hover,
 
 .btn-menu:hover {
   background-color: var(--button-hover-bg);
+}
+
+.btn-menu,
+.hamburger span {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.btn-menu:hover,
+.order-online:hover {
+  filter: brightness(1.2);
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
 }
 
 /* Add a bit of responsiveness */
